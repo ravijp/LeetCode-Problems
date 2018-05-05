@@ -1,0 +1,12 @@
+class Solution:
+    def uniqueMorseRepresentations(self, words):
+        """
+        :type words: List[str]
+        :rtype: int
+        """
+        Morse = [".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."]
+        
+        transformed_word = {''.join(Morse[ord(w) - ord('a')] for w in word)
+        for word in words}
+        
+        return len(transformed_word)
