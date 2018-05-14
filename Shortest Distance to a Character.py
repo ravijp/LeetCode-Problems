@@ -22,7 +22,7 @@ class Solution(object):
             ans.append(i - prev)
 
         prev = float('inf')
-        for i in xrange(len(S) - 1, -1, -1):
+        for i in iter(range(len(S) - 1, -1, -1)):
             if S[i] == C: prev = i
             ans[i] = min(ans[i], prev - i)
 
